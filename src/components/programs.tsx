@@ -47,11 +47,8 @@ export default function Program() {
           );
         })}
       </div>
-
-      <div className='flex justify-center mt-16'>
-        <button className='bg-[#14263F] text-[#F6F6F2] px-6 py-3 rounded-2xl transition-all duration-300 ease-out hover:text-[#14263F] hover:bg-[#F6F6F2] hover:border hover:border-[#14263F] hover:-translate-y-[2px]'>
-          View All Programmes
-        </button>
+      <div className='flex  z-50 lg:mt-5'>
+        <button className='text-[#14263F] text-lg p-2 rounded-2xl transition-all duration-300 ease-out hover:text-[#14263F] hover:tracking-wide'>View All Programmes <span aria-hidden='true'>→</span></button>
       </div>
     </section>
   );

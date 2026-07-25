@@ -56,12 +56,10 @@ return (
           </div>
         ))}
       </div>
- 
-      <div className='flex justify-center mt-16'>
-        <button className='bg-] text-[#14263F] border border-[#14263F] px-6 py-3 rounded-2xl transition-all duration-300 ease-out hover:text-[#F6F6F2] hover:bg-[#14263F] hover:border hover:border-[#14263F] hover:-translate-y-[2px]'>
-          View Full Events
-        </button>
+      <div className='flex  z-50 lg:mt-5'>
+        <button className='text-[#14263F] text-lg p-2 rounded-2xl transition-all duration-300 ease-out hover:text-[#14263F] hover:tracking-wide'>View Full Events <span aria-hidden='true'>→</span></button>
       </div>
+      
     </section>
   );
 }

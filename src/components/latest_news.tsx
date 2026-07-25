@@ -31,8 +31,8 @@ export default function LatestNews(){
                         ))}
                 </div>
             </div>
-            <div className='flex justify-center z-50 lg:mt-10'>
-                <button className='bg-[#14263F] text-[#F6F6F2] p-2 rounded-2xl transition-all duration-300 ease-out hover:text-[#14263F] hover:bg-[#F6F6F2] hover:border-1 hover:-translate-y-[2px]'>View all Edunova News</button>
+            <div className='flex  z-50 lg:mt-5'>
+                <button className='text-[#14263F] text-lg p-2 rounded-2xl transition-all duration-300 ease-out hover:text-[#14263F] hover:tracking-wide'>View all Edunova News <span aria-hidden='true'>→</span></button>
             </div>
         </>
     )
