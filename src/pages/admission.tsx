@@ -44,15 +44,6 @@ const importantDates = [
   { event: 'Orientation', date: 'August 25, 2026' },
 ];
 
-const stats = [
-  { value: 95, suffix: '%', label: 'Graduate Employment' },
-  { value: 40, suffix: '+', label: 'Degree Programmes' },
-  { value: 15000, suffix: '+', label: 'Students' },
-  { value: 500, suffix: '+', label: 'Academic Staff' },
-  { value: 50, suffix: '+', label: 'Research Laboratories' },
-  { value: 30, suffix: '+', label: 'International Partners' },
-];
-
 const faqs = [
   { q: 'How do I apply?', a: 'Complete the online application form on our admissions portal, upload the required documents, and pay the application fee to submit your application.' },
   { q: 'What documents are required?', a: 'Requirements vary by pathway — see the Admission Requirements section above for a full breakdown per programme type.' },
@@ -62,106 +53,35 @@ const faqs = [
   { q: 'How long does admission take?', a: 'Admission decisions are typically released within 4–6 weeks after the application deadline.' },
 ];
 
-// Count-up hook, triggers when element scrolls into view
-function useCountUp(target: number, duration = 1500, shouldStart: boolean) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!shouldStart) return;
-    let startTime: number | null = null;
-
-    const step = (timestamp: number) => {
-      if (startTime === null) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-
-    requestAnimationFrame(step);
-  }, [shouldStart, target, duration]);
-
-  return count;
-}
-
-function StatCounter({ value, suffix, label }: { value: number; suffix: string; label: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const count = useCountUp(value, 1500, inView);
-
-  return (
-    <div ref={ref} className='flex flex-col items-center text-center'>
-      <span className='font-serif text-4xl md:text-5xl font-bold text-[#B8901F]'>
-        {count.toLocaleString()}{suffix}
-      </span>
-      <span className='font-sans text-sm text-white/70 mt-2'>{label}</span>
-    </div>
-  );
-}
-
 export default function Admission() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [openReq, setOpenReq] = useState<number | null>(0);
 
   return (
     <div>
-      {/* Hero */}
       <div className='relative h-[420px] md:h-[520px] overflow-hidden rounded-t-2xl'>
         <img src={library} alt="EduNova University library" className='w-full h-full object-cover' />
         <div className='absolute inset-0 bg-gradient-to-t from-[#0B1524]/90 via-[#0B1524]/40 to-[#0B1524]/30' />
         <div className='absolute inset-0 flex flex-col justify-center items-center text-center px-6'>
-          <span className='font-mono text-xs tracking-[0.3em] uppercase text-[#B8901F] mb-4'>
-            Applications Now Open
-          </span>
-          <h2 className='font-serif text-white text-4xl md:text-6xl font-semibold leading-tight max-w-2xl'>
-            Admissions 2026/2027
-          </h2>
-          <p className='font-sans text-white/75 text-base md:text-lg mt-5 max-w-xl leading-relaxed'>
-            Begin your journey at EduNova University and join a community of innovators, researchers, and future leaders.
-          </p>
+          <span className='font-mono text-xs tracking-[0.3em] uppercase text-[#B8901F] mb-4'>Applications Now Open</span>
+          <h2 className='font-serif text-white text-4xl md:text-6xl font-semibold leading-tight max-w-2xl'>Admissions 2026/2027</h2>
+          <p className='font-sans text-white/75 text-base md:text-lg mt-5 max-w-xl leading-relaxed'>Begin your journey at EduNova University and join a community of innovators, researchers, and future leaders.</p>
           <div className='flex gap-3'>
-            <a href='#' className='bg-[#B8901F] text-[#1E3A8A] font-semibold text-sm px-6 py-3 rounded-2xl mt-8 transition-all duration-300 ease-out hover:-translate-y-[2px] hover:shadow-lg'>
-              Apply Now
-            </a>
-            <a href='#' className='bg-white/10 border border-white/30 text-white font-semibold text-sm px-6 py-3 rounded-2xl mt-8 transition-all duration-300 ease-out hover:-translate-y-[2px] hover:bg-white/20'>
-              Download Prospectus
-            </a>
+            <a href='#' className='bg-[#B8901F] text-[#1E3A8A] font-semibold text-sm px-6 py-3 rounded-2xl mt-8 transition-all duration-300 ease-out hover:-translate-y-[2px] hover:shadow-lg'>Apply Now</a>
+            <a href='#' className='bg-white/10 border border-white/30 text-white font-semibold text-sm px-6 py-3 rounded-2xl mt-8 transition-all duration-300 ease-out hover:-translate-y-[2px] hover:bg-white/20'>Download Prospectus</a>
           </div>
         </div>
       </div>
-
-      {/* Admission Requirements */}
       <section className='px-8 md:px-12 py-20 bg-white'>
         <div className='max-w-2xl mb-12'>
-          <span className='font-mono text-xs tracking-[0.2em] uppercase text-black/50'>Requirements</span>
-          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>
-            Admission Requirements
-          </h2>
+          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>Admission Requirements</h2>
         </div>
-
         <div className='max-w-3xl flex flex-col gap-3'>
           {options.map((option, index) => {
             const isOpen = openReq === index;
             return (
               <div key={index} className='border border-black/10 rounded-xl overflow-hidden'>
-                <button
-                  onClick={() => setOpenReq(isOpen ? null : index)}
-                  className='w-full flex items-center justify-between px-6 py-4 bg-white hover:bg-black/[0.02] transition-colors'
-                >
+                <button onClick={() => setOpenReq(isOpen ? null : index)} className='w-full flex items-center justify-between px-6 py-4 bg-white hover:bg-black/[0.02] transition-colors'>
                   <span className='font-serif text-lg font-semibold text-black'>{option.pathway}</span>
                   <ChevronDown size={18} className={`text-black/40 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
@@ -182,16 +102,10 @@ export default function Admission() {
           })}
         </div>
       </section>
-
-      {/* Application Process */}
       <section className='px-8 md:px-12 py-20 bg-[#F6F6F2]'>
         <div className='max-w-2xl mb-12'>
-          <span className='font-mono text-xs tracking-[0.2em] uppercase text-black/50'>How It Works</span>
-          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>
-            Application Process
-          </h2>
+          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>Application Process</h2>
         </div>
-
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
           {processSteps.map((step, index) => (
             <div key={index} className='bg-white rounded-xl p-6 border border-black/5'>
@@ -201,16 +115,12 @@ export default function Admission() {
           ))}
         </div>
       </section>
-
-      {/* Important Dates */}
       <section className='px-8 md:px-12 py-20 bg-white'>
         <div className='max-w-2xl mb-12'>
-          <span className='font-mono text-xs tracking-[0.2em] uppercase text-black/50'>Calendar</span>
           <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>
             Important Dates
           </h2>
         </div>
-
         <div className='max-w-3xl flex flex-col divide-y divide-black/10'>
           {importantDates.map((item, index) => (
             <div key={index} className='flex justify-between items-center py-4'>
@@ -220,41 +130,18 @@ export default function Admission() {
           ))}
         </div>
       </section>
-
-      {/* Why Choose EduNova - stat counters */}
-      <section className='px-8 md:px-12 py-20 bg-[#0B1524]'>
-        <div className='max-w-2xl mb-14'>
-          <span className='font-mono text-xs tracking-[0.2em] uppercase text-[#B8901F]/70'>By The Numbers</span>
-          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-white mt-3'>
-            Why Choose EduNova?
-          </h2>
-        </div>
-
-        <div className='grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6'>
-          {stats.map((stat, index) => (
-            <StatCounter key={index} value={stat.value} suffix={stat.suffix} label={stat.label} />
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ */}
       <section className='px-8 md:px-12 py-20 bg-white'>
         <div className='max-w-2xl mb-12'>
-          <span className='font-mono text-xs tracking-[0.2em] uppercase text-black/50'>FAQ</span>
           <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>
             Frequently Asked Questions
           </h2>
         </div>
-
         <div className='max-w-3xl flex flex-col divide-y divide-black/10'>
           {faqs.map((faq, index) => {
             const isOpen = openFaq === index;
             return (
               <div key={index} className='py-4'>
-                <button
-                  onClick={() => setOpenFaq(isOpen ? null : index)}
-                  className='w-full flex items-center justify-between text-left'
-                >
+                <button onClick={() => setOpenFaq(isOpen ? null : index)} className='w-full flex items-center justify-between text-left'>
                   <span className='font-sans font-medium text-black text-base'>{faq.q}</span>
                   <ChevronDown size={18} className={`text-black/40 flex-shrink-0 ml-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
