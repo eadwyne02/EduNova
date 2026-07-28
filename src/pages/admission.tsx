@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState} from 'react';
 import library from '../assets/library.webp';
 import { ChevronDown } from 'lucide-react';
 
