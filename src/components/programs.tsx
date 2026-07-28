@@ -38,7 +38,7 @@ export default function Program() {
                 <Icon size={22} strokeWidth={1.5} className='text-[#14263F] transition-colors duration-300 group-hover:text-white'/>
               </div>
               <h3 className='font-mono text-xs tracking-wide uppercase text-black/40 mb-2 transition-colors group-hover:text-[#14263F]'>{program.type}</h3>
-              <p className='font-serif text-2xl md:text-3xl font-semibold text-black mb-3'>{program.tagline}</p>
+              <p className='font-serif text-2xl md:text-3xl font-semibold text-[#14263F] mb-3'>{program.tagline}</p>
               <p className='font-sans text-black/60 text-base leading-relaxed max-w-md mb-5'>{program.description}</p>
                <a href='#' className='inline-flex items-center gap-1 font-sans text-sm text-black transition-all duration-300 hover:gap-2'>
                 Learn more <span aria-hidden='true'>→</span>

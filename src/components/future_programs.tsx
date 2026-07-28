@@ -41,7 +41,7 @@ return (
               <span className='font-mono text-sm tracking-wide uppercase text-black/70'>
                 {futureEvent.time}
               </span>
-              <h3 className='font-serif text-xl md:text-2xl font-semibold text-black mt-1 mb-2 transition-colors group-hover:text-[#14263F]'>
+              <h3 className='font-serif text-xl md:text-2xl font-semibold text-[#14263F] mt-1 mb-2 transition-colors group-hover:text-[#14263F]'>
                 {futureEvent.event}
               </h3>
               <p className='font-sans text-black/60 text-base leading-relaxed max-w-lg'>

@@ -158,16 +158,12 @@ export default function ProgramList() {
   };
 
   return (
-    <section className='px-8 md:px-12 py-20 bg-[#F6F6F2]'>
-      <div className='max-w-2xl mb-14'>
-        <span className='font-mono text-xs tracking-[0.2em] uppercase text-black/50'>
-          Academics
-        </span>
-        <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3 leading-tight'>
+    <section className='px-8 md:px-12 py-10 bg-[#F6F6F2]'>
+      <div className='max-w-2xl mb-10'>
+        <span className='font-mono text-sm tracking-[0.2em] uppercase text-black/50'>
           Explore Every Faculty & School
-        </h2>
+        </span>
       </div>
-
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {programs.map((program, programIndex) => {
           const Icon = program.icon;

@@ -51,62 +51,36 @@ const coreValues = [
 export default function About() {
   return (
     <div>
-      {/* Hero */}
       <div className='relative w-full h-[420px] md:h-[520px]'>
         <img src={edu} alt="EduNova University campus gate" className='w-full h-full object-cover' />
         <div className='absolute inset-0 bg-gradient-to-t from-[#0B1524]/90 via-[#0B1524]/45 to-[#0B1524]/20' />
         <div className='absolute inset-0 flex flex-col justify-center items-center text-center px-6'>
-          <span className='font-mono text-xs tracking-[0.3em] uppercase text-[#B8901F] mb-4'>
-            Est. 1985
-          </span>
-          <h2 className='font-serif text-white text-4xl md:text-6xl font-semibold leading-tight max-w-2xl'>
-            About EduNova University
-          </h2>
-          <p className='font-sans text-white/75 text-base md:text-lg mt-5 max-w-xl leading-relaxed'>
-            Empowering minds through innovation, research, and global education to shape the leaders of tomorrow.
-          </p>
+          <span className='font-mono text-xs tracking-[0.3em] uppercase text-[#ebd38e] mb-4'>Est. 1985</span>
+          <h2 className='font-serif text-white text-4xl md:text-6xl font-semibold leading-tight max-w-2xl'>About EduNova University</h2>
+          <p className='font-sans text-white/75 text-base md:text-lg mt-5 max-w-xl leading-relaxed'>Empowering minds through innovation, research, and global education to shape the leaders of tomorrow.</p>
         </div>
       </div>
-
-      {/* Our Story */}
-      <section className='px-8 md:px-12 py-20 bg-white'>
+      <section className='px-8 md:px-12 pt-10 pb-4 bg-white'>
         <div className='max-w-3xl mx-auto text-center'>
-          <span className='font-mono text-xs tracking-[0.2em] uppercase text-black/50'>Who We Are</span>
-          <h3 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3 mb-6'>
-            Our Story
-          </h3>
-          <p className='font-sans text-black/65 text-base md:text-lg leading-relaxed'>
-            Founded with a vision to redefine higher education, EduNova University is a forward-thinking institution committed to academic excellence, innovation, and societal impact. Through world-class teaching, cutting-edge research, and industry collaboration, we prepare students to thrive in an ever-changing global landscape.
-          </p>
+          <h3 className='font-serif text-3xl md:text-4xl font-semibold text-[#14263F] mt-3 mb-6'>Our Story</h3>
+          <p className='font-sans text-black/65 text-base md:text-lg leading-relaxed'>Founded with a vision to redefine higher education, EduNova University is a forward-thinking institution committed to academic excellence, innovation, and societal impact. Through world-class teaching, cutting-edge research, and industry collaboration, we prepare students to thrive in an ever-changing global landscape.</p>
         </div>
       </section>
-
-      {/* Vision & Mission */}
-      <section className='px-8 md:px-12 py-20 bg-[#F6F6F2]'>
-        <div className='max-w-2xl mb-14'>
-          <span className='font-mono text-xs tracking-[0.2em] uppercase text-black/50'>What Drives Us</span>
-          <h3 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>
-            Mission & Vision
-          </h3>
+      <section className='px-8 md:px-12 py-5 bg-[#F6F6F2]'>
+        <div className='max-w-2xl mb-8'>
+          <h3 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3 text-center '>Mission & Vision</h3>
         </div>
-
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-16'>
           <div className='bg-white rounded-2xl p-8 border border-black/5'>
             <span className='font-mono text-xs tracking-widest uppercase text-[#B8901F]'>Vision</span>
-            <p className='font-serif text-xl md:text-2xl text-black mt-3 leading-snug'>
-              To be a globally recognized university driving innovation, research, and transformative education.
-            </p>
+            <p className='font-serif text-xl md:text-2xl text-black mt-3 leading-snug'>To be a globally recognized university driving innovation, research, and transformative education.</p>
           </div>
           <div className='bg-white rounded-2xl p-8 border border-black/5'>
             <span className='font-mono text-xs tracking-widest uppercase text-[#B8901F]'>Mission</span>
-            <p className='font-serif text-xl md:text-2xl text-black mt-3 leading-snug'>
-              To empower students through quality education, groundbreaking research, and meaningful community engagement while fostering creativity, leadership, and lifelong learning.
-            </p>
+            <p className='font-serif text-xl md:text-2xl text-black mt-3 leading-snug'>To empower students through quality education, groundbreaking research, and meaningful community engagement while fostering creativity, leadership, and lifelong learning.</p>
           </div>
         </div>
-
-        {/* Core Values */}
-        <span className='font-mono text-xs tracking-widest uppercase text-black/40 block mb-6'>Core Values</span>
+        <span className='font-mono text-2xl tracking-widest uppercase text-black/40 block mb-6'>Core Values</span>
         <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
           {coreValues.map((value, index) => {
             const Icon = value.icon
@@ -119,12 +93,9 @@ export default function About() {
           })}
         </div>
       </section>
-
-      {/* Leadership */}
-      <section className='px-8 md:px-12 py-20 bg-white'>
+      <section className='px-8 md:px-12 py-14 bg-white'>
         <div className='max-w-2xl mb-14'>
-          <span className='font-mono text-xs tracking-[0.2em] uppercase text-black/50'>Meet the Team</span>
-          <h3 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>
+          <h3 className='font-serif text-3xl md:text-4xl font-semibold text-[#14263F] mt-3'>
             University Leadership
           </h3>
         </div>
@@ -133,47 +104,27 @@ export default function About() {
           {leaders.map((leader, index) => (
             <div key={index} className='group'>
               <div className='relative aspect-[4/5] rounded-2xl overflow-hidden mb-4 bg-black/5'>
-                <img
-                  src={leader.image}
-                  alt={leader.alt}
-                  className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
-                />
+                <img src={leader.image} alt={leader.alt} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'/>
               </div>
-              <h4 className='font-serif text-lg font-semibold text-black leading-snug'>
-                {leader.name}
-              </h4>
-              <p className='font-mono text-xs tracking-wide uppercase text-[#B8901F] mt-1'>
-                {leader.position}
-              </p>
-              <p className='font-sans text-xs text-black/50 mt-1'>
-                {leader.qualification}
-              </p>
+              <h4 className='font-serif text-lg font-semibold text-black leading-snug'>{leader.name}</h4>
+              <p className='font-mono text-xs tracking-wide uppercase text-[#B8901F] mt-1'>{leader.position}</p>
+              <p className='font-sans text-xs text-black/50 mt-1'>{leader.qualification}</p>
             </div>
           ))}
         </div>
       </section>
-
-      {/* Campus Facilities */}
-      <section className='px-8 md:px-12 py-20 bg-[#F6F6F2]'>
+      <section className='px-8 md:px-12 py-10 bg-[#F6F6F2]'>
         <div className='max-w-2xl mb-14'>
-          <span className='font-mono text-xs tracking-[0.2em] uppercase text-black/50'>Life on Campus</span>
-          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>
+          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-[#14263F] mt-3'>
             Campus Facilities
           </h2>
         </div>
-
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
           {facilities.map((facility, index) => (
             <div key={index} className='group relative rounded-2xl overflow-hidden aspect-square'>
-              <img
-                src={facility.image}
-                alt={facility.alt}
-                className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
-              />
+              <img src={facility.image} alt={facility.alt} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'/>
               <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent' />
-              <p className='absolute bottom-4 left-4 right-4 font-sans text-white text-sm md:text-base font-medium leading-tight'>
-                {facility.name}
-              </p>
+              <p className='absolute bottom-4 left-4 right-4 font-sans text-white text-sm md:text-base font-medium leading-tight'>{facility.name}</p>
             </div>
           ))}
         </div>

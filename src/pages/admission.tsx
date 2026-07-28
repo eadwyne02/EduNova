@@ -72,9 +72,9 @@ export default function Admission() {
           </div>
         </div>
       </div>
-      <section className='px-8 md:px-12 py-20 bg-white'>
+      <section className='px-6 md:px-12 py-10 bg-white'>
         <div className='max-w-2xl mb-12'>
-          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>Admission Requirements</h2>
+          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-[#14263F] mt-3'>Admission Requirements</h2>
         </div>
         <div className='max-w-3xl flex flex-col gap-3'>
           {options.map((option, index) => {
@@ -102,9 +102,9 @@ export default function Admission() {
           })}
         </div>
       </section>
-      <section className='px-8 md:px-12 py-20 bg-[#F6F6F2]'>
-        <div className='max-w-2xl mb-12'>
-          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>Application Process</h2>
+      <section className='px-8 md:px-12 py-10 bg-[#F6F6F2]'>
+        <div className='max-w-2xl mb-8'>
+          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-[#14263F] mt-3'>Application Process</h2>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
           {processSteps.map((step, index) => (
@@ -115,9 +115,9 @@ export default function Admission() {
           ))}
         </div>
       </section>
-      <section className='px-8 md:px-12 py-20 bg-white'>
+      <section className='px-8 md:px-12 py-10 bg-white'>
         <div className='max-w-2xl mb-12'>
-          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>
+          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-[#14263F] mt-3'>
             Important Dates
           </h2>
         </div>
@@ -130,9 +130,9 @@ export default function Admission() {
           ))}
         </div>
       </section>
-      <section className='px-8 md:px-12 py-20 bg-white'>
-        <div className='max-w-2xl mb-12'>
-          <h2 className='font-serif text-3xl md:text-4xl font-semibold text-black mt-3'>
+      <section className='px-8 md:px-12 pt-4 pb-8 bg-white'>
+        <div className='max-w-2xl mb-6'>
+          <h2 className='font-serif text-2xl md:text-4xl font-semibold text-[#14263F]'>
             Frequently Asked Questions
           </h2>
         </div>
